@@ -1,0 +1,236 @@
+//imperfect attempt to fix margin issue for figure elements.  Only works for some cases.
+
+figure {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.site-header {
+	background: $color__background-header;
+}
+
+.nav-header {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.title-wrapper {
+	float: left;
+	padding: .647em 0 .647em .88em;
+
+	a {
+	color: $color__text-header;
+
+		&:visited {
+			color: $color__text-header;
+		}
+	}	
+}
+
+.site-title {
+	font-family: $font_heading;
+  font-weight: 400;
+  @include font-size(1.25);
+  color: $color__text-header;
+}
+
+
+
+.main-navigation {
+	clear: none;
+	display: block;
+	float: right;
+	@include font-size(.9375);
+	font-family: $font_heading;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			float: left;
+			position: absolute;
+			// top: 1.5em;
+			left: -999em;
+			z-index: 99999;
+			background: $color__nav-dropdown;
+
+			ul {
+				left: -999em;
+				top: 0;
+			}
+
+			li {
+				&:hover > ul {
+					left: 100%;
+				}
+			}
+
+			a {
+				width: 175px;
+			}
+
+			:hover > a {
+			}
+
+			a:hover {
+			}
+		}
+
+		li:hover > ul {
+			left: auto;
+		}
+	}
+	li {
+		float: left;
+		position: relative;
+
+		//&:hover > a {
+		//	background: pink;
+		//}
+	}
+	a {
+		display: block;
+		text-decoration: none;
+		padding: 1em;
+		color: $color__text-header;
+
+		&:visited {
+			color: $color__text-header;
+		}
+
+		&:hover {
+			background: pink;
+		}
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a {
+	}
+}
+
+/* Small menu. */
+.menu-toggle {
+	display: none;
+}
+
+@media screen and (max-width: 700px) {
+	.menu-toggle {
+		display: block;
+		float: right;
+	}
+
+	.main-navigation {
+		float: none;
+		clear: both;
+	}
+
+	//.main-navigation.toggled .nav-menu {
+	//	display: block;
+	//	float: none;
+	//}
+
+	//Changed from above because I reorder my header
+	.toggled .main-navigation .nav-menu {
+		display: block;
+		float: none;
+		background: $color__nav-dropdown;
+	}
+
+	.main-navigation ul {
+		display: none;
+		float: none;
+	}
+
+	.main-navigation li { 
+		float: none;
+
+		li a {
+		padding-left: 2em;
+		}
+
+		li li a {
+		padding-left: 3em;
+		}
+	}
+
+	.main-navigation ul ul,
+	.main-navigation ul ul ul {
+		box-shadow: none;
+		position: relative;
+		top: inherit;
+		left: 0;
+		display: block;
+		float: none;
+		background: $color__nav-dropdown;
+
+		a {
+			width: 100%;
+		}
+
+		li {
+			//padding-left: 1em;
+		}
+	}
+
+	.main-navigation ul ul ul li a {
+		padding-left: 3em;
+	}
+
+	//solves problem of deeply nested lists disappearing when parent hovered 
+	.main-navigation ul ul li:hover > ul {
+		left: 0;
+	}
+
+	.menu-toggle {
+		border: none;
+		background: $color__background-header;
+		box-shadow: none;
+		color: $color__text-header;
+		@include font-size(0.9375);
+		line-height: 1.5;
+		padding: 1em;
+		text-shadow: none;
+		font-family: $font_heading;
+
+		&:hover {
+			border: none;
+			box-shadow: none;
+		}
+
+		&:active,
+		&:focus {
+			border: none;
+			box-shadow: none;
+		}
+	}
+
+	.menu-toggle .fa-bars {
+		color: orange;
+	}
+
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	& .nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	& .nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}

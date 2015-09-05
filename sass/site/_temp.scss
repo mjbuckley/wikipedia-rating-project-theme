@@ -1,0 +1,155 @@
+.intro-box {
+  margin-top: 2em;
+  background-color: #eee;
+  padding: 2em 4em;
+  text-align: center;
+}
+
+/* styling for a button-like link
+
+.intro-box p a {
+  padding: 1em 2em;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 3.5;
+  color: black;
+  background: #989aa6;
+  border-radius: 3px;
+
+  &:hover {
+  border: 1px solid black;
+  color: white;
+  }
+  &:focus,
+  &:active {
+  border: 2px solid black;
+  opacity: 0.5;
+  }
+}
+*/
+
+.box-left {
+  width: 50%;
+  float: left;
+  text-align: center;
+  padding: 2em;
+}
+
+.box-left p a {
+  padding: 1em 2em;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 3.5;
+  color: black;
+  background: #989aa6;
+  border-radius: 3px;
+
+  &:hover {
+  border: 1px solid black;
+  color: white;
+  }
+  &:focus,
+  &:active {
+  border: 2px solid black;
+  opacity: 0.5;
+  }
+}
+
+.box-right {
+  width: 50%;
+  float: left;
+  text-align: center;
+  padding: 2em;
+}
+
+.box-right p a {
+  padding: 1em 2em;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 3.5;
+  color: black;
+  background: #989aa6;
+  border-radius: 3px;
+
+  &:hover {
+  border: 1px solid black;
+  color: white;
+  }
+  &:focus,
+  &:active {
+  border: 2px solid black;
+  opacity: 0.5;
+  }
+}
+
+.upcase {
+  text-transform: uppercase;
+}
+
+.upcase-date {
+  text-transform: uppercase;
+  margin-left: 1em;
+  color: #6b6b6b;
+}
+
+.entry-meta.temp {
+  font-size: 15px;
+  p {
+  margin-bottom: 0;
+  margin-top: 0;
+  }
+}
+
+.entry-header.temp h1{
+  margin-bottom: .4em;
+}
+
+.entry-content.temp {
+  margin-top: .67em;
+}
+
+.most-recent {
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: -15px;
+}
+
+.tax-head {
+  text-align: center;
+}
+
+.content-area a {
+  color: royalblue;
+
+  &:visited {
+    color: royalblue;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+  &:active {
+    color: black;
+  }
+}
+
+.temp-list {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.main-navigation li a:hover {
+  background: royalblue;
+}
+
+.click-to-view {
+  font-size: 15px;
+}
+
+.entry-title.temp {
+  text-align: center;
+}
+
