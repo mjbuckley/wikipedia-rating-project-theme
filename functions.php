@@ -212,10 +212,10 @@ function wrp_theme_create_pages() {
   }
 
 	// This empty page is currently needed to allow users to download their posts in a JSON file.
-	$page_check = get_page_by_title( 'json-export' );
+	$page_check = get_page_by_title( 'JSON Export' );
 	$new_page = array(
 		'post_type' => 'page',
-		'post_title' => 'json-export',
+		'post_title' => 'JSON Export',
 		'post_status' => 'publish',
 	);
 	if( is_null( $page_check ) ) {
