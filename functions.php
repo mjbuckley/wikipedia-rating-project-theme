@@ -165,7 +165,7 @@ function wrp_theme_create_pages() {
 
   $page_check = get_page_by_title( 'Disciplines' ); // Returns page object if exists, null if not
   $new_page = array(
-    'post_type' => 'page', 
+    'post_type' => 'page',
     'post_title' => 'Disciplines',
     'post_content' => 'All reviews sorted by discipline:',
     'post_status' => 'publish',
@@ -176,7 +176,7 @@ function wrp_theme_create_pages() {
 
   $page_check = get_page_by_title( 'Ratings' );
   $new_page = array(
-    'post_type' => 'page', 
+    'post_type' => 'page',
     'post_title' => 'Ratings',
     'post_content' => 'All reviews sorted by rating:',
     'post_status' => 'publish',
@@ -187,7 +187,7 @@ function wrp_theme_create_pages() {
 
   $page_check = get_page_by_title( 'Titles' );
   $new_page = array(
-    'post_type' => 'page', 
+    'post_type' => 'page',
     'post_title' => 'Titles',
     'post_content' => 'All reviews sorted by title:',
     'post_status' => 'publish',
@@ -198,7 +198,7 @@ function wrp_theme_create_pages() {
 
   $page_check = get_page_by_title( 'About' );
   $new_page = array(
-    'post_type' => 'page', 
+    'post_type' => 'page',
     'post_title' => 'About',
     'post_content' => "The text on this page can be edited by going to the Pages section in the Dashboard.  This would be a good place to explain the purpose of the site and to include some contact information.  You might consider mentioning and including a link to <a href='http://mjbuckley.github.io/wikipedia-rating-project'>The Wikipedia Rating Project.</a>",
     'post_status' => 'publish',
@@ -207,11 +207,22 @@ function wrp_theme_create_pages() {
     wp_insert_post( $new_page );
   }
 
+	// This empty page is currently needed to allow users to download their posts in a JSON file.
+	$page_check = get_page_by_title( 'json-export' );
+	$new_page = array(
+		'post_type' => 'page',
+		'post_title' => 'json-export',
+		'post_status' => 'publish',
+	);
+	if( is_null( $page_check ) ) {
+		wp_insert_post( $new_page );
+	}
+
   $site_title = get_bloginfo();
   if ( ! empty( $site_title ) ) {
     $page_check = get_page_by_title( $site_title );
     $new_page = array(
-      'post_type' => 'page', 
+      'post_type' => 'page',
       'post_title' => $site_title,
       'post_content' => "This site allows users to rate the quality of Wikipedia articles.  It is built with tools from <a href='http://mjbuckley.github.io/wikipedia-rating-project'>The Wikipedia Rating Project.</a>  The text on this page can be edited by going to the Pages section in the Dashboard.",
       'post_status' => 'publish',
@@ -222,7 +233,7 @@ function wrp_theme_create_pages() {
       if ( $site_title_page && ! is_wp_error( $site_title_page ) ) { // set as home page
         update_option( 'page_on_front', $site_title_page );
         update_option( 'show_on_front', 'page' );
-      }  
+      }
     } else { // Page already exist. Don't modify content, but set as front page
       update_option( 'page_on_front', $page_check->ID );
       update_option( 'show_on_front', 'page' );
@@ -277,13 +288,13 @@ function wrp_theme_create_menu() {
 
     wp_update_nav_menu_item( $menu_id, 0, array(
       'menu-item-title' =>  'About',
-      'menu-item-url' => home_url( '/about/' ), 
+      'menu-item-url' => home_url( '/about/' ),
       'menu-item-status' => 'publish'));
 
     wp_update_nav_menu_item( $menu_id, 0, array(
       'menu-item-title' =>  'Home',
       'menu-item-classes' => 'home',
-      'menu-item-url' => home_url( '/' ), 
+      'menu-item-url' => home_url( '/' ),
       'menu-item-status' => 'publish'));
   }
 
