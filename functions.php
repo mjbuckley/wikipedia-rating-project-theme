@@ -159,6 +159,10 @@ function wrp_theme_replace_howdy( $wp_admin_bar ) {
 add_filter( 'admin_bar_menu', 'wrp_theme_replace_howdy', 25 );
 
 
+// Remove xmlrpc rsd link in header
+remove_action('wp_head', 'rsd_link');
+
+
 // Prepopulate theme with default pages on theme activation.  Only adds pages if they don't already exist, so nothing
 // gets overwritten.  They can also always be removed by user, but the idea is to have a fully functioning site out of the box.
 function wrp_theme_create_pages() {
