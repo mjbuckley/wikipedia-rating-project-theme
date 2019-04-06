@@ -40,6 +40,8 @@ Five pages are automatically created when you install the theme.  Each plays an 
 
 Although this theme is a fully functional WordPress theme, it was built to be the presentation layer for a review site, not a general purpose WordPress theme.  We hope to add features that expand the general purpose usefulness of the theme in the future, but for now it's not meant to be a stand alone theme.
 
+As mentioned in the instructions for setting up the [Wikipedia Rating Project Plugin](https://github.com/mjbuckley/wikipedia-rating-project-plugin), it is essential the WordPress Classic Editor plugin be installed, activated, and turned on for all users. See the plugin setup guide for more information.
+
 This theme has been designed not to accept or display comments.  This could change in the future, but for now they are not present.  However, it still might be a good idea to disable comments in your WordPress settings.
 
 A fresh WordPress installation contains a "Sample Page" page, a "Hello world!" post, and an example comment by "Mr. Wordpress."  You probably want to delete these if you haven't already.
